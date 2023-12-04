@@ -12,6 +12,7 @@ public class TimelineManager : MonoBehaviour
         {
 
             Timeline.Play();
+            gameObject.SetActive(false);
         }
     }
 }

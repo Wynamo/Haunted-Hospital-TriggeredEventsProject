@@ -3,15 +3,21 @@ using UnityEngine;
 public class SimpleRandomAudioPlayer : MonoBehaviour
 {
     public AudioClip[] audioClips;
-    private AudioSource audioSource;
+    public AudioSource audioSource; // Make it public for manual assignment
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
+        // Check if an audio source is manually assigned
         if (audioSource == null)
         {
-            audioSource = gameObject.AddComponent<AudioSource>();
+            // If not assigned, try to get the AudioSource component from the same GameObject
+            audioSource = GetComponent<AudioSource>();
+
+            // If still null, add an AudioSource component to the GameObject
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
         }
 
         PlayRandomAudio();
@@ -27,7 +33,7 @@ public class SimpleRandomAudioPlayer : MonoBehaviour
             audioSource.Play();
 
             // Invoke the method again for the next random play
-            Invoke("PlayRandomAudio", Random.Range(10f, 20f)); // Adjust the time between plays
+            Invoke("PlayRandomAudio", Random.Range(5f, 20f)); // Adjust the time between plays
         }
         else
         {

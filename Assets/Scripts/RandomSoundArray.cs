@@ -33,7 +33,7 @@ public class SimpleRandomAudioPlayer : MonoBehaviour
             audioSource.Play();
 
             // Invoke the method again for the next random play
-            Invoke("PlayRandomAudio", Random.Range(5f, 20f)); // Adjust the time between plays
+            Invoke("PlayRandomAudio", Random.Range(15f,25f)); // Adjust the time between plays
         }
         else
         {

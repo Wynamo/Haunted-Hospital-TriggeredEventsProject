@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathScreenSignal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject mainCamera;
+    public GameObject DeathScreen;
+    public GameObject player;
 
-    // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
+
+        mainCamera.SetActive(true);
+        DeathScreen.SetActive(true);
+        player.SetActive(false);
         
+
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

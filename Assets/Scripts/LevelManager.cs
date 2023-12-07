@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public void MainMenu()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("Main Menu");
     }
     public void Play()
     {
